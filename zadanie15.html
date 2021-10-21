@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta charset="UTF-8"/>
+    <title>Zadanie 15 Fischer</title>
+  </head>
+  <body>
+  <script language="JavaScript">
+  var x1_fis=prompt("Podaj liczbe a: ", "1");
+  var x2_fis=prompt("Podaj liczbe b: ", "2");
+  var x1 = parseFloat(x1_fis);
+  var x2 = parseFloat(x2_fis);
+  var y1 = 3*Math.pow(x1, (11/(11 + 2)));
+  var y2 =(2 * Math.cos(x1*Math.PI / 180)) + (2 *Math.sin(x1 * Math.PI /180));
+  var y3 = Math.cbrt(Math.pow(x1,5) + (2* Math.pow(x2, 4)));
+  var y4 = Math.abs(x1-x2);
+  var y5 = y3*y4;
+  document.write("X1="+x1 + "<br>" + "X2="+x2 + "<br>" + "Y3="+y1.toFixed(2) + "<br>" + "Y4="+y2.toFixed(4) + "<br>" + "Y5="+y3.toFixed(4) + "<br>"  );
+  </script>
+  </body>
+</html>
