@@ -1,0 +1,56 @@
+<html lang="pl">
+<head> 
+<title>Zadanie 21 Fischer</title>
+ <script language="JavaScript">
+function dlug_fischer(dl_fis, al_fis)
+{
+ dl_fis_liczba=parseFloat(dl_fis)
+ al_fis_liczba=parseFloat(al_fis)
+ dlug_fischer_wynik=Math.sqrt((dl_fis_liczba*dl_fis_liczba)+(al_fis_liczba*al_fis_liczba)) 
+ document.getElementsByName('dl')[0].value=dlug_fischer_wynik.toFixed(2); 
+ alert("Drabina="+dlug_fischer_wynik.toFixed(2)+" m"); 
+ wyprowadz_dlugosc_fis.innerHTML="Drabina="+dlug_fischer_wynik.toFixed(2)+" m"+"<br>"; 
+}
+function kat_fischer(dl_fis, al_fis)
+{
+ dl_fis_liczba=parseFloat(dl_fis)
+ al_fis_liczba=parseFloat(al_fis)
+ kat_fischer_wynik=Math.atan((dl_fis_liczba/al_fis_liczba))*180/Math.PI
+ document.getElementsByName('kat')[0].value=kat_fischer_wynik.toFixed(2);
+ alert("Alfa="+kat_fischer_wynik.toFixed(2)+" [stopni]");
+ wyprowadz_kat_fis.innerHTML="Alfa="+kat_fischer_wynik.toFixed(2)+" [stopni]";
+}
+function okno_zamknij_fischer() 
+{
+ window.close()
+}
+ </script>
+</head> 
+<body> 
+Pobliczanie odległości od drabiny i kąta
+<br> <br>
+<form name="formularz" action="..." onsubmit="dlug_fischer(this.d_dana_fis.value,this.x_dana_fis.value); 
+kat_fischer(this.d_dana_fis.value,this.x_dana_fis.value);return false"> 
+Podaj d=
+<input size="6" name="d_dana_fis">
+Podaj x=
+<input size="6" name="x_dana_fis">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Drabina=
+<input size="6" name="dl">
+Alfa=
+<input size="6" name="kat">
+</form>
+<table>
+<tr id="wyprowadz_dlugosc_fis"></tr>
+<tr id="wyprowadz_kat_fis"></tr>
+</table>
+<form>
+ 	    <input type="button" value="zamknij okno" onclick="okno_zamknij_fischer()">
+</form>
+</body> 
+</html>
