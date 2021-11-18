@@ -1,23 +1,51 @@
-<!DOCTYPE html>   
-    <head>    
-          <title>  Zadanie 19  Fischer </title>    
-          <meta charset="utf-8">   
-     </head>  
-<body> 
-          <div style="color:navy;font-size:50px;"> 
-             <script language="JavaScript"> 
-                  var a=parseFloat(prompt("a=","")); 
-                  var b=parseFloat(prompt("b=","")); 
- 
-                 function pole_fis(a, b) { 
-                        return a * b; 
-                  } 
-                 function obwod_fis(a, b) { 
-                        return a+a+b+b; 
-                  } 
-               document.write("pole="+pole_fis(a,b)+"<br>"); 
-               document.write("obwod="+obwod_fis(a,b)+"<br>")
-</script> 
-</div> 
-</body> 
+<html>
+<head>
+<title>Fischer zadanie 19</title>
+<script language="JavaScript">
+
+function Pole_fischer(a_fis,b_fis)
+{
+a_fis=parseFloat(a_fis);
+b_fis=parseFloat(b_fis);
+
+wynik = a_fis * b_fis;
+document.getElementsByName('pole')[0].value=wynik.toFixed(2);
+alert("Pole="+wynik.toFixed(2)+" cm2");
+wyprowadz_pole_fis.innerHTML="Pole="+wynik.toFixed(2)+" cm2"+"<br>";
+}
+
+
+function obwod_fischer(a_fis,b_fis)
+{
+a_fis=parseFloat(a_fis);
+b_fis=parseFloat(b_fis);
+
+wynik = a_fis * 2 + b_fis * 2;
+document.getElementsByName('obw')[0].value=wynik.toFixed(2);
+alert("Obwod="+wynik.toFixed(2)+" cm");
+wyprowadz_obwod_fis.innerHTML="Obwod="+wynik.toFixed(2)+" cm"+"<br>";
+}
+</script>
+</head>
+<body>
+<form name="formularz" action="..." onsubmit="Pole_fischer(this.a_dana_fis.value,this.b_dana_fis.value); obwod_fischer(this.a_dana_fis.value,this.b_dana_fis.value);return false">
+Podaj a=
+<input size="6" name="a_dana_fis">
+Podaj b=
+<input size="6" name="b_dana_fis">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Pole=
+<input size="6" name="pole">
+Obwod=
+<input size="6" name="obw">
+</form>
+<table>
+<tr id="wyprowadz_pole_fis"></tr>
+<tr id="wyprowadz_obwod_fis"></tr>
+</table>
+</body>
 </html>
